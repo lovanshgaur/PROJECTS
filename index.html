@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>All Projects - Lovansh Gaur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="noise-overlay"></div>
+    <div class="cursor"></div>
+
+    <nav id="navbar">
+        <div class="flex-between">
+            <a href="index.html" class="logo interactable">LG.</a>
+            <div class="nav-links">
+                <button class="theme-toggle hover-trigger" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-sun sun-icon" style="display: none;"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <section class="container section-pad projects-hero">
+                <div style="width: 100%;">
+                    <span class="kicker overflow-hidden"><span class="reveal-text">all projects</span></span>
+                    <h1 class="display-text overflow-hidden">
+                        <span class="reveal-text">The</span>
+                    </h1>
+                    <h1 class="display-text overflow-hidden" style="color: var(--text-muted);">
+                        <span class="reveal-text" style="transition-delay: 0.001s">Archive (12)</span>
+                    </h1>
+                </div>
+                <div class="grid-2">
+                    <p class="hero-desc">
+                        Crafting minimal, motion-driven web experiences with Vanilla JavaScript, GSAP, and early
+                        explorations in Three.js. Focused on clean UI, intuitive interactions, and fast, expressive
+                        builds powered by simple backend tools.
+                    </p>
+                </div>
+                <div class="scroll-down hover-trigger">
+                    <div class="scroll-line"></div>
+                    <span onclick="scrollDown()">About Me</span>
+                </div>
+            </section>
+
+                        <!-- PROJECTS GRID -->
+            <section class="container">
+                <div class="projects-grid">
+
+                    <!-- 01 -->
+                    <a href="#" class="project-item interactable">
+                        <div class="p-img-container reveal-img">
+                            <img src="../img/folio-proj.png" alt="Lumina">
+                        </div>
+                        <div class="p-meta">
+                            <div>
+                                <h3 class="p-title">Lumina Three</h3>
+                                <p class="p-desc">Interactive WebGL particles system experiment designed for immersive
+                                    storytelling.</p>
+                                <div class="p-tags">
+                                    <span class="tag">WebGL</span><span class="tag">Three.js</span>
+                                </div>
+                            </div>
+                            <span class="p-year">2024</span>
+                        </div>
+                    </a>
+
+                    <!-- 02 -->
+                    <a href="#" class="project-item interactable">
+                        <div class="p-img-container reveal-img">
+                            <img src="../img/tcs-proj.png"
+                                alt="Coffee">
+                        </div>
+                        <div class="p-meta">
+                            <div>
+                                <h3 class="p-title">TheCoffeeSoul</h3>
+                                <p class="p-desc">An e-commerce experience focused on the sensory details of coffee
+                                    brewing.</p>
+                                <div class="p-tags">
+                                    <span class="tag">GSAP</span><span class="tag">Ecommerce</span>
+                                </div>
+                            </div>
+                            <span class="p-year">2023</span>
+                        </div>
+                    </a>
+
+                    <!-- 03 -->
+                    <a href="#" class="project-item interactable">
+                        <div class="p-img-container reveal-img">
+                            <img src="../img/gg-proj.png"
+                                alt="AI">
+                        </div>
+                        <div class="p-meta">
+                            <div>
+                                <h3 class="p-title">GreekGeek </h3>
+                                <p class="p-desc">AI-powered image recognition tool for creators with a minimal
+                                    interface.</p>
+                                <div class="p-tags">
+                                    <span class="tag">Python</span><span class="tag">AI/ML</span>
+                                </div>
+                            </div>
+                            <span class="p-year">2023</span>
+                        </div>
+                    </a>
+
+                    <!-- 04 -->
+                    <a href="#" class="project-item interactable">
+                        <div class="p-img-container reveal-img">
+                            <img src="../img/om-proj.png"
+                                alt="Neon">
+                        </div>
+                        <div class="p-meta">
+                            <div>
+                                <h3 class="p-title">OmniMob</h3>
+                                <p class="p-desc">A retro-synthwave endless runner game built entirely in the browser
+                                    canvas.</p>
+                                <div class="p-tags">
+                                    <span class="tag">Canvas API</span><span class="tag">Game Dev</span>
+                                </div>
+                            </div>
+                            <span class="p-year">2022</span>
+                        </div>
+                    </a>
+
+                    <!-- 05 -->
+                    <a href="#" class="project-item interactable">
+                        <div class="p-img-container reveal-img">
+                            <img src="../img/pv-proj.png"
+                                alt="Dashboard">
+                        </div>
+                        <div class="p-meta">
+                            <div>
+                                <h3 class="p-title">PixelVerse</h3>
+                                <p class="p-desc">Dashboard UI kit for financial applications focusing on data
+                                    visualization.</p>
+                                <div class="p-tags">
+                                    <span class="tag">React</span><span class="tag">D3.js</span>
+                                </div>
+                            </div>
+                            <span class="p-year">2022</span>
+                        </div>
+                    </a>
+
+                    <!-- 06 -->
+                    <a href="#" class="project-item interactable">
+                        <div class="p-img-container reveal-img">
+                            <img src="../img/still-proj.png"
+                                alt="Voxel">
+                        </div>
+                        <div class="p-meta">
+                            <div>
+                                <h3 class="p-title">Still SaaS</h3>
+                                <p class="p-desc">A browser-based voxel building experience allowing users to create 3D
+                                    worlds.</p>
+                                <div class="p-tags">
+                                    <span class="tag">Three.js</span><span class="tag">Voxel</span>
+                                </div>
+                            </div>
+                            <span class="p-year">2021</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <footer class="footer container">
+                <div class="footer-main">
+                    <a href="mailto:hello@lovansh.me" class="footer-cta hover-trigger" style="opacity: 0.7;">hello@lovansh.me</a>
+
+                    <div class="footer-content">
+                        <div class="footer-links-col">
+                            <p style="color: var(--text-muted); max-width: 300px; line-height: 1.6; font-size: 1.1rem;">
+                                Designing the future, one pixel and one packet at a time. Open for collaborations and
+                                coffee.
+                            </p>
+                        </div>
+                        <div class="footer-links-col">
+                            <h4>Sitemap</h4>
+                            <a href="#work" class="hover-trigger">Work</a>
+                            <a href="#expertise" class="hover-trigger">Capabilities</a>
+                            <!-- <a href="#journal" class="hover-trigger">Journal</a> -->
+                            <a href="#about" class="hover-trigger">About</a>
+                        </div>
+                        <div class="footer-links-col">
+                            <h4>Socials</h4>
+                            <a href="https://github.com/lovanshgaur" class="hover-trigger">GitHub</a>
+                            <a href="https://www.linkedin.com/in/lovesh-gaur-346653229/"
+                                class="hover-trigger">LinkedIn</a>
+                            <a href="https://x.com/thelovanshgaur" class="hover-trigger">Twitter / X</a>
+                            <a href="https://www.instagram.com/thelovanshgaur/" class="hover-trigger">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">&#x1F4E7; hello@lovansh.me</p>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2025 Lovansh Gaur. All Rights
+                        Reserved.</p>
+
+                    <div class="ist-time">
+                        <span>NCR, India (IST)</span>
+                        <div id="clock">00:00:00</div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
