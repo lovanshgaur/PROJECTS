@@ -1,0 +1,468 @@
+:root {
+  --bg: #0b0f14;
+  --surface: #111827;
+  --surface-soft: #0f172a;
+
+  --primary: #7c7cff;
+  --accent: #22d3ee;
+
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.06);
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+#container {
+  width: 100%;
+  height: 100%;
+  color: var(--text-main);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  color: var(--surface);
+  background: var(--primary);
+  font-weight: 800;
+}
+nav,
+.navbar,
+.nav-links,
+header,
+.hero,
+.socials,
+.feature-container,
+section,
+.feature-card,
+.split,
+.stats-container,
+.stat-card,
+.testimonial-container,
+.cta-container,
+footer,
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+::selection {
+  background: var(--primary);
+  color: var(--surface);
+}
+
+/* Responsive Typography */
+
+/* Base (large desktops / default) */
+html {
+  font-size: 100%; /* 16px */
+}
+
+/* Small laptops */
+@media (max-width: 1024px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  html {
+    font-size: 85%; /* ~13.6px */
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  html {
+    font-size: 78%; /* ~12.5px */
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  html {
+    font-size: 72%; /* ~11.5px */
+  }
+}
+
+/* ================================
+    nav CSS
+================================ */
+nav {
+  width: 100%;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  position: fixed;
+  top: 0%;
+  z-index: 1000000000;
+}
+#logo {
+  font-size: 1.25rem;
+  font-weight: 1000;
+}
+.nav-links {
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+/* ================================
+    Header CSS
+================================ */
+header {
+  width: 100%;
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  /* display: none; */
+}
+.hero {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), var(--bg));
+  padding: 0rem 2rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.hero-text {
+  width: 60%;
+  font-size: 3rem;
+}
+.hero h4 {
+  font-size: 1.25rem;
+  width: 50%;
+  font-weight: 500;
+}
+.hero-btns .btn {
+  margin-top: 2rem;
+  margin-left: 0rem;
+  font-size: 1rem;
+}
+.secondary-hero {
+  background: none;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.social-proofs {
+  width: 100%;
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--text-muted);
+  border-bottom: 1px solid var(--text-muted);
+  overflow: hidden;
+  padding: 16px 0;
+  margin: 2rem 0rem;
+  opacity: 0.75;
+}
+
+.socials {
+  display: flex;
+  width: max-content;
+  animation: scroll 24s linear infinite;
+}
+.socials:hover {
+  animation: none;
+}
+.social {
+  font-size: 3.5rem;
+  font-weight: 600;
+  padding: 0 2rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================================
+    Main CSS
+================================ */
+section {
+  width: 100%;
+  height: 80vh;
+  padding: 2rem 0rem;
+  flex-direction: column;
+}
+.section-heading {
+  text-transform: uppercase;
+  font-size: 3rem;
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  margin: 2rem 0rem;
+  background: url("./assets/blue_bg.png");
+  background-size: contain;
+  background-clip: text;
+  color: transparent;
+}
+
+.feature-container {
+  width: 80%;
+  height: 100%;
+  gap: 2rem;
+}
+.feature-card {
+  flex: 1;
+  min-height: 260px;
+  border-radius: 1rem;
+  padding: 2rem;
+  flex-direction: column;
+  text-align: center;
+  background: var(--surface);
+  border: var(--border);
+  box-shadow: 0 4px 4px var(rgba(0, 0, 0, 0.5));
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+.feature-card:hover {
+  opacity: 1;
+  background: var(--surface-soft);
+  transform: translateY(-10px);
+}
+.feature-card h1 {
+  font-size: 2rem;
+}
+.feature-card p {
+  font-size: 1rem;
+}
+
+.split {
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+  flex-direction: row;
+  overflow: hidden;
+}
+.split-profile {
+  width: 50%;
+  height: 100%;
+}
+.split-profile img {
+  width: auto;
+  height: 100%;
+}
+.split-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), var(--bg));
+  padding: 0rem 2rem;
+  padding-left: 10rem;
+}
+.split-text-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+  gap: 1rem;
+}
+.split-text h1 {
+  line-height: 1;
+  font-size: 4rem;
+  background: url("./assets/blue_bg.png");
+  background-size: contain;
+  background-clip: text;
+  color: transparent;
+}
+.split-text p {
+  width: 80%;
+  font-size: 1.25rem;
+}
+.split-text .points {
+  width: 60%;
+  /* text-align: right; */
+  font-size: 1.25rem;
+}
+.point::before {
+  content: " • ";
+}
+
+.stats-container {
+  width: 80%;
+  gap: 2rem;
+}
+.stat-card {
+  flex: 1;
+  padding: 0rem 2rem;
+  min-height: 200px;
+  border-radius: 1rem;
+  flex-direction: column;
+  background: var(--surface);
+  border: var(--border);
+  box-shadow: 0 4px 4px var(rgba(0, 0, 0, 0.5));
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+.stat-card h1 {
+  width: 100%;
+  font-size: 3rem;
+  line-height: 1;
+}
+.stat-card p {
+  width: 100%;
+}
+.stat-card:hover {
+  opacity: 1;
+  background: var(--surface-soft);
+  transform: translateY(-10px);
+}
+
+.testimonial-container {
+  gap: 2rem;
+  width: 80%;
+  margin-top: 3rem;
+}
+.testimonial-card {
+  flex: 1;
+  border-radius: 1rem;
+  background-color: var(--surface);
+  padding: 2rem;
+  min-height: 200px;
+}
+
+.cta {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  position: relative;
+  background: linear-gradient( var(--bg), var(--surface));
+  overflow: hidden;
+}
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.04'/></svg>");
+  opacity: 0.6;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.cta-container {
+  width: 80%;
+  gap: 2rem;
+  flex-direction: column;
+}
+.cta-container h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  opacity: 0.5;
+  background: url("./assets/blue_bg.png");
+  background-size: contain;
+  background-clip: text;
+  color: transparent;
+}
+.cta-btn {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  font-size: 2rem;
+  border: 1px solid var(--primary);
+  background: none;
+  color: var(--primary);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.cta-btn::before {
+  content: "";
+  width: 120%;
+  height: 120%;
+  border: 1rem;
+  background-color: var(--primary);
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  transform: scaleY(0);
+  transition: all 0.3s ease-in-out;
+  transform-origin: bottom;
+}
+.cta-btn:hover {
+  color: var(--surface);
+}
+.cta-btn:hover::before {
+  transition: all 0.3s ease-in-out;
+  transform: scaleY(1);
+}
+.cta-note {
+  opacity: 0.75;
+}
+
+/* ================================
+    Footer CSS
+================================ */
+
+footer {
+  width: 100%;
+  height: 45vh;
+  flex-direction: column;
+  background: var(--surface);
+}
+.footer-container {
+  width: 80%;
+  height: 80%;
+}
+.footer-hero {
+  width: 60%;
+  height: 100%;
+}
+.footer-hero h1 {
+  font-size: 5rem;
+}
+.footer-links {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.f-links {
+  display: flex;
+  flex-direction: column;
+}
+footer .links {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
