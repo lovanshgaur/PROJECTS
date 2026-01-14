@@ -17,7 +17,7 @@
   /* Layout vars from Reference */
   --gutter: clamp(24px, 5vw, 80px);
   --section-spacing: clamp(100px, 15vh, 180px);
-  --display-huge: clamp(3.5rem, 9vw, 8rem);
+  --display-huge: clamp(3.5rem, 9vw, 7rem);
 }
 [data-theme="light"] {
   --bg: #e6e4e0;
@@ -409,7 +409,8 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
+  padding-top: 10rem;
   width: 100%;
 }
 .hero-desc {
@@ -418,6 +419,9 @@ nav {
   color: var(--text-muted);
   max-width: 500px;
   line-height: 1.6;
+}
+#projectCount {
+  display: inline;
 }
 .scroll-down {
   position: absolute;
@@ -435,7 +439,6 @@ nav {
   height: 1px;
   background: var(--text-muted);
 }
-
 
 /* Project Grid */
 .projects-grid {
@@ -468,7 +471,6 @@ nav {
   overflow: hidden;
   margin-bottom: 2rem;
   position: relative;
-  /* background: #111; */
 }
 
 .p-img-container img {
@@ -482,8 +484,8 @@ nav {
 }
 
 .project-item:hover .p-img-container img {
-    filter: saturate(100%);
-  transform: scale(1.4);
+  filter: saturate(100%);
+  transform: scale(1.1);
   opacity: 1;
 }
 
@@ -496,14 +498,14 @@ nav {
   justify-content: space-between;
   align-items: flex-start;
   border-top: 1px solid var(--border);
-  padding-top: 1rem;
+  padding-top: 0.75rem;
 }
 
 .p-title {
   font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   transition: color 0.3s ease;
   line-height: 1;
 }
@@ -511,7 +513,7 @@ nav {
 .p-desc {
   color: var(--text-muted);
   font-size: 0.95rem;
-  max-width: 300px;
+  max-width: 450px;
   line-height: 1.5;
 }
 
@@ -544,14 +546,10 @@ nav {
   color: var(--accent);
 }
 
-
-
-
-
 /* --- FOOTER --- */
 .footer {
   min-height: 100vh;
-  padding: 8rem 0 3rem;
+  padding: 8rem 3rem 2rem 3rem; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -560,7 +558,7 @@ nav {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.75fr 1fr 1fr;
   gap: 4rem;
   margin-bottom: auto;
   padding-top: 4rem;
@@ -582,10 +580,11 @@ nav {
 .footer-cta:hover {
   color: var(--accent);
 }
-.footer-links-col{
-    display: flex;
-    flex-direction: column;
+.footer-links-col {
+  display: flex;
+  flex-direction: column;
 }
+
 
 .footer-links-col h4 {
   color: var(--text-muted);
@@ -636,14 +635,11 @@ nav {
   font-variant-numeric: tabular-nums;
 }
 
-
-
-
 /* Responsive */
 @media (max-width: 992px) {
-    html{
-        font-size: 75%;
-    }
+  html {
+    font-size: 75%;
+  }
   .nav-links {
     display: none;
   }

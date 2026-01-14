@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
+    
+    console.log("Hey, It's Lovansh Gaur")
 
     // INITIAL REVEAL
     const tlLoad = gsap.timeline();
@@ -61,25 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // CURSOR LOGIC
     if (window.matchMedia("(pointer: fine)").matches) {
         const cursor = document.querySelector('.cursor');
-        const cursorOutline = document.querySelector('.cursor-outline');
 
         window.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
-
-            // Outline follows with delay
-            cursorOutline.animate({
-                left: `${e.clientX}px`,
-                top: `${e.clientY}px`
-            }, { duration: 500, fill: "forwards" });
         });
 
         document.querySelectorAll('.interactable').forEach(el => {
             el.addEventListener('mouseenter', () => {
-                document.body.classList.add('hovering');
+                cursor.classList.add('hovered');
+                console.log('first')
             });
             el.addEventListener('mouseleave', () => {
-                document.body.classList.remove('hovering');
+                cursor.classList.remove('hovered');
             });
         });
     }
@@ -134,3 +130,58 @@ function updateClock() {
 setInterval(updateClock, 1000);
 
 updateClock();
+
+//GoTo Home
+function goto() {
+    window.location.href = "https://lovansh.me";
+
+}
+
+
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        let works = data.works.filter(item => item.toDisplay === true);
+        projectCount(works.length);
+        displayProjects(works);
+
+    })
+    .catch(error => console.error('Error loading JSON:', error));
+
+function projectCount(n) {
+    let projectNumber = document.getElementById('projectCount');
+    projectNumber.innerText = `(${n})`;
+}
+
+let projectsContainer = document.getElementById('projects-grid');
+
+function displayProjects(projects) {
+
+    projects.forEach(project => {
+        let projectCard = document.createElement('a');
+
+        projectCard.classList.add('project-item', 'interactable');
+        projectCard.href = project.link;
+        projectCard.target = "_blank";
+
+        projectCard.innerHTML = `
+
+            <div class="p-img-container reveal-img">
+                <img src="${project.img}" alt="${project.title}">
+            </div>
+
+            <div class="p-meta">
+                <div>
+                    <h3 class="p-title">${project.title}</h3>
+                    <p class="p-desc">${project.desc}</p>
+                    <div class="p-tags">
+                        ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+                <span class="p-year">${project.year}</span>
+            </div>
+
+        `;
+        projectsContainer.appendChild(projectCard);
+    })
+}

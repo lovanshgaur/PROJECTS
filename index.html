@@ -17,6 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -27,9 +29,9 @@
 
     <nav id="navbar">
         <div class="flex-between">
-            <a href="index.html" class="logo interactable">LG.</a>
+            <a href="https://lovansh.me" class="logo interactable">LG.</a>
             <div class="nav-links">
-                <button class="theme-toggle hover-trigger" id="theme-toggle" aria-label="Toggle Theme">
+                <button class="theme-toggle hover-trigger interactable" id="theme-toggle" aria-label="Toggle Theme">
                     <i class="fas fa-sun sun-icon" style="display: none;"></i>
                     <i class="fas fa-moon moon-icon"></i>
                 </button>
@@ -44,10 +46,10 @@
                 <div style="width: 100%;">
                     <span class="kicker overflow-hidden"><span class="reveal-text">all projects</span></span>
                     <h1 class="display-text overflow-hidden">
-                        <span class="reveal-text">The</span>
+                        <span class="reveal-text">Web</span>
                     </h1>
                     <h1 class="display-text overflow-hidden" style="color: var(--text-muted);">
-                        <span class="reveal-text" style="transition-delay: 0.001s">Archive (12)</span>
+                        <span class="reveal-text" style="transition-delay: 0.001s">Projects <p id="projectCount"></p></span>
                     </h1>
                 </div>
                 <div class="grid-2">
@@ -59,122 +61,14 @@
                 </div>
                 <div class="scroll-down hover-trigger">
                     <div class="scroll-line"></div>
-                    <span onclick="scrollDown()">About Me</span>
+                    <span onclick="goto()" class="interactable">Visit Portfolio</span>
                 </div>
             </section>
 
             <!-- PROJECTS GRID -->
             <section class="container">
-                <div class="projects-grid">
-
-                    <!-- 01 -->
-                    <a href="#" class="project-item interactable">
-                        <div class="p-img-container reveal-img">
-                            <img src="img/folio-proj.png" alt="Lumina">
-                        </div>
-                        <div class="p-meta">
-                            <div>
-                                <h3 class="p-title">Lumina Three</h3>
-                                <p class="p-desc">Interactive WebGL particles system experiment designed for immersive
-                                    storytelling.</p>
-                                <div class="p-tags">
-                                    <span class="tag">WebGL</span><span class="tag">Three.js</span>
-                                </div>
-                            </div>
-                            <span class="p-year">2024</span>
-                        </div>
-                    </a>
-
-                    <!-- 02 -->
-                    <a href="#" class="project-item interactable">
-                        <div class="p-img-container reveal-img">
-                            <img src="img/tcs-proj.png" alt="Coffee">
-                        </div>
-                        <div class="p-meta">
-                            <div>
-                                <h3 class="p-title">TheCoffeeSoul</h3>
-                                <p class="p-desc">An e-commerce experience focused on the sensory details of coffee
-                                    brewing.</p>
-                                <div class="p-tags">
-                                    <span class="tag">GSAP</span><span class="tag">Ecommerce</span>
-                                </div>
-                            </div>
-                            <span class="p-year">2023</span>
-                        </div>
-                    </a>
-
-                    <!-- 03 -->
-                    <a href="#" class="project-item interactable">
-                        <div class="p-img-container reveal-img">
-                            <img src="img/gg-proj.png" alt="AI">
-                        </div>
-                        <div class="p-meta">
-                            <div>
-                                <h3 class="p-title">GreekGeek </h3>
-                                <p class="p-desc">AI-powered image recognition tool for creators with a minimal
-                                    interface.</p>
-                                <div class="p-tags">
-                                    <span class="tag">Python</span><span class="tag">AI/ML</span>
-                                </div>
-                            </div>
-                            <span class="p-year">2023</span>
-                        </div>
-                    </a>
-
-                    <!-- 04 -->
-                    <a href="#" class="project-item interactable">
-                        <div class="p-img-container reveal-img">
-                            <img src="img/om-proj.png" alt="Neon">
-                        </div>
-                        <div class="p-meta">
-                            <div>
-                                <h3 class="p-title">OmniMob</h3>
-                                <p class="p-desc">A retro-synthwave endless runner game built entirely in the browser
-                                    canvas.</p>
-                                <div class="p-tags">
-                                    <span class="tag">Canvas API</span><span class="tag">Game Dev</span>
-                                </div>
-                            </div>
-                            <span class="p-year">2022</span>
-                        </div>
-                    </a>
-
-                    <!-- 05 -->
-                    <a href="#" class="project-item interactable">
-                        <div class="p-img-container reveal-img">
-                            <img src="img/pv-proj.png" alt="Dashboard">
-                        </div>
-                        <div class="p-meta">
-                            <div>
-                                <h3 class="p-title">PixelVerse</h3>
-                                <p class="p-desc">Dashboard UI kit for financial applications focusing on data
-                                    visualization.</p>
-                                <div class="p-tags">
-                                    <span class="tag">React</span><span class="tag">D3.js</span>
-                                </div>
-                            </div>
-                            <span class="p-year">2022</span>
-                        </div>
-                    </a>
-
-                    <!-- 06 -->
-                    <a href="#" class="project-item interactable">
-                        <div class="p-img-container reveal-img">
-                            <img src="img/still-proj.png" alt="Voxel">
-                        </div>
-                        <div class="p-meta">
-                            <div>
-                                <h3 class="p-title">Still SaaS</h3>
-                                <p class="p-desc">A browser-based voxel building experience allowing users to create 3D
-                                    worlds.</p>
-                                <div class="p-tags">
-                                    <span class="tag">Three.js</span><span class="tag">Voxel</span>
-                                </div>
-                            </div>
-                            <span class="p-year">2021</span>
-                        </div>
-                    </a>
-
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projects will be dynamically inserted here -->
                 </div>
             </section>
 
@@ -191,13 +85,12 @@
                             </p>
                         </div>
                         <div class="footer-links-col">
-                            <h4>Sitemap</h4>
-                            <a href="#work" class="hover-trigger">Work</a>
-                            <a href="#expertise" class="hover-trigger">Capabilities</a>
-                            <!-- <a href="#journal" class="hover-trigger">Journal</a> -->
-                            <a href="#about" class="hover-trigger">About</a>
+                            <h4>Portfolio Links</h4>
+                            <a href="https://lovansh.me#work" class="hover-trigger">Work</a>
+                            <a href="https://lovansh.me#expertise" class="hover-trigger">Capabilities</a>
+                            <a href="https://lovansh.me#about" class="hover-trigger">About</a>
                         </div>
-                        <div class="footer-links-col">
+                        <div class="footer-links-col social-links">
                             <h4>Socials</h4>
                             <a href="https://github.com/lovanshgaur" class="hover-trigger">GitHub</a>
                             <a href="https://www.linkedin.com/in/lovesh-gaur-346653229/"
@@ -209,8 +102,8 @@
                 </div>
 
                 <div class="footer-bottom">
-                    <p style="color: var(--text-muted); font-size: 0.8rem;">&#x1F4E7; hello@lovansh.me</p>
-                    <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2025 Lovansh Gaur. All Rights
+                    <p style="color: var(--text-muted); font-size: 0.8rem;"><i class="fas fa-envelope"></i> hello@lovansh.me</p>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;"><i class="fas fa-copyright"></i> 2025 Lovansh Gaur. All Rights
                         Reserved.</p>
 
                     <div class="ist-time">
